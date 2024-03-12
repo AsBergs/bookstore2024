@@ -1,5 +1,8 @@
 from django.contrib import admin
 from django.urls import include, path
+...
+from core.views import EditoraViewSet
+...
 
 from drf_spectacular.views import (
     SpectacularAPIView,
@@ -15,7 +18,7 @@ from core.views import CategoriaViewSet # nova linha
 router = DefaultRouter()
 router.register(r"categorias", CategoriaViewSet) # nova linha
 router.register(r"users", UserViewSet, basename="users")
-
+router.register(r"editoras", EditoraViewSet)
 urlpatterns = [
     path("admin/", admin.site.urls),
     # OpenAPI 3
